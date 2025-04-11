@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="log.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="login-container">
+    <form class="login-form">
+      <h2>Login</h2>
+      <div class="input-group">
+        <input id="usernameEmail" type="text" placeholder="Username or Email" required />
+      </div>
+      <div class="input-group">
+        <input id="password" type="password" placeholder="Password" required />
+      </div>
+      <button type="submit">Log In</button>
+      <p class="signup-link">
+        Don't have an account? <a href="Sign.html">Sign up</a>
+      </p>
+    </form>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $(".login-form").on("submit", function (e) {
+        e.preventDefault();
+
+        const input = $("#usernameEmail").val().trim();
+        const password = $("#password").val().trim();
+
+        if (!input || !password) {
+          alert("⚠️ Please enter both username/email and password.");
+          return;
+        }
+
+        $.getJSON("login-data.json")
+          .done(function (users) {
+            const matchedUser = users.find(user =>
+              (user.username === input || user.email === input) &&
+              user.password === password
+            );
+
+            if (matchedUser) {
+              alert("✅ Login successful!");
+              sessionStorage.setItem("currentUser", JSON.stringify(matchedUser));
+              window.location.href = "index.html"; // Redirect
+            } else {
+              alert("❌ Login failed: Invalid username/email or password.");
+            }
+          })
+          .fail(function () {
+            alert("⚠️ Could not load login-data.json. Please make sure the file exists and is in the same folder as this HTML file.");
+          });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Background styling */
+body {
+  background: url("b3.jpg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login container */
+.login-container {
+  background: rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(10px);
+  padding: 70px;
+
+  border-radius: 10px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form heading */
+.login-form h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/* Input fields */
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 10px;
+  background: #ca3390;
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #630c57 !important;
+}
+
+/* Signup link */
+.signup-link {
+  margin-top: 10px;
+  color: white;
+}
+
+.signup-link a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+button {
+  transition-duration: 0.4s;
+}
+button:hover {
+  background-color: #057c0b;
+}

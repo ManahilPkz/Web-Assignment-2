@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in</title>
+    <link rel="stylesheet" href="Sign.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <form class="login-form">
+        <h2>Sign in</h2>
+        <div class="input-group">
+          <input type="text" class="username" placeholder="Username" required />
+        </div>
+        <div class="input-group">
+          <input
+            type="password"
+            class="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <input type="email" class="email" placeholder="Email" required />
+        </div>
+        <div class="input-group">
+          <input type="tel" class="phone" placeholder="Phone No" required />
+        </div>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+    <script>
+      document
+        .querySelector(".login-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevents page refresh
+
+          let username = document.querySelector(".username").value;
+          let password = document.querySelector(".password").value;
+          let email = document.querySelector(".email").value;
+          let phone = document.querySelector(".phone").value;
+
+          if (username && password && email && phone) {
+            window.location.href = "index.html"; // Redirect to index.html after login
+          } else {
+            alert("Please fill all fields.");
+          }
+        });
+    </script>
+  </body>
+</html>

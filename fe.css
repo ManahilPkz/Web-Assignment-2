@@ -1,0 +1,94 @@
+/* Elite Modern Feedback Form Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(#eb91e6, #c90b89);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #c01b97;
+}
+
+p {
+  font-size: 14px;
+  color: #dd3bba;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #dd3bba;
+  text-align: left;
+}
+
+input,
+textarea {
+  width: calc(100% - 20px); /* Fix for overflow issue */
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.rating input:checked ~ label {
+  color: #ffcc00;
+}
+
+button {
+  background: #db4ae0;
+  color: white;
+  padding: 12px;
+  margin-top: 15px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #621658;
+}
